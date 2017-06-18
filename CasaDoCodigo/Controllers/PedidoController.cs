@@ -13,7 +13,6 @@ namespace CasaDoCodigo.Controllers
         public IActionResult Carrinho()
         {
             return View();
-
          }
 
         public IActionResult Resumo()
