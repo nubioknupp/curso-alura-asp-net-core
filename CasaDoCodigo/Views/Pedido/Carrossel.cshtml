@@ -6,78 +6,73 @@
 
 <div id="carousel-id" class="carousel slide" data-ride="carousel">
 
-      <div class="carousel-inner">
+      <div class="carousel-inner" role="listbox">
+
+
             <div class="item active">
                   <div class="row">
-                        <div class="col-md-3">
-                              <div class="panel panel-default">
-                                    <div class="panel-body">
-                                          <img src="~/images/produtos/large_1.jpg"/>
-                                    </div>
-                                    <div class="panel-footer">
-                                          <div>Camiseta Error 404</div>
-                                          <div>R$ 59,90</div>
-                                          <div class="text-center">
-                                                <a asp-action="Carrinho">Adicionar</a>
+                        @for (int i = 0; i < 4; i++)
+                        {
+                              <div class="col-md-3">
+                                    <div class="panel panel-default">
+                                          <div class="panel-body">
+                                                <img src="~/images/produtos/large_@(Model[i].Id).jpg"/>
+                                          </div>
+                                          <div class="panel-footer">
+                                                <div>@(Model[i].Nome)</div>
+                                                <div>R$ @(Model[i].Preco)</div>
+                                                <div class="text-center">
+                                                      <a asp-action="Carrinho">Adicionar</a>
+                                                </div>
                                           </div>
                                     </div>
                               </div>
-                        </div>
-                        <div class="col-md-3">
-                              <div class="panel panel-default">
-                                    <div class="panel-body">
-                                          <img src="~/images/produtos/large_2.jpg"/>
-                                    </div>
-                                    <div class="panel-footer">
-                                          <div>Camisa May The Code Be With You</div>
-                                          <div>R$ 59,90</div>
-                                          <div class="text-center">
-                                                <a asp-action="Carrinho">Adicionar</a>
-                                          </div>
-                                    </div>
-                              </div>
-
-                        </div>
-                        <div class="col-md-3">
-                              <div class="panel panel-default">
-                                    <div class="panel-body">
-                                          <img src="~/images/produtos/large_3.jpg"/>
-                                    </div>
-                                    <div class="panel-footer">
-                                          <div>Camiseta Como Seria Bom</div>
-                                          <div>R$ 59,90</div>
-                                          <div class="text-center">
-                                                <a asp-action="Carrinho">Adicionar</a>
-                                          </div>
-                                    </div>
-                              </div>
-
-                        </div>
-                        <div class="col-md-3">
-                              <div class="panel panel-default">
-                                    <div class="panel-body">
-                                          <img src="~/images/produtos/large_4.jpg"/>
-                                    </div>
-                                    <div class="panel-footer">
-                                          <div>Livro REST: Construa API's</div>
-                                          <div>R$ 29,90</div>
-                                          <div class="text-center">
-                                                <a asp-action="Carrinho">Adicionar</a>
-                                          </div>
-                                    </div>
-                              </div>
-
-                        </div>
+                        }
                   </div>
             </div>
 
             <div class="item">
+                  <div class="row">
+                        @for (int i = 4; i < 8; i++)
+                        {
+                              <div class="col-md-3">
+                                    <div class="panel panel-default">
+                                          <div class="panel-body">
+                                                <img src="~/images/produtos/large_@(Model[i].Id).jpg"/>
+                                          </div>
+                                          <div class="panel-footer">
+                                                <div>@(Model[i].Nome)</div>
+                                                <div>R$ @(Model[i].Preco)</div>
+                                                <div class="text-center">
+                                                      <a asp-action="Carrinho">Adicionar</a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        }
+                  </div>
             </div>
 
             <div class="item">
-            </div>
-
-            <div class="item">
+                  <div class="row">
+                        @for (int i = 8; i < 9; i++)
+                        {
+                              <div class="col-md-3">
+                                    <div class="panel panel-default">
+                                          <div class="panel-body">
+                                                <img src="~/images/produtos/large_@(Model[i].Id).jpg"/>
+                                          </div>
+                                          <div class="panel-footer">
+                                                <div>@(Model[i].Nome)</div>
+                                                <div>R$ @(Model[i].Preco)</div>
+                                                <div class="text-center">
+                                                      <a asp-action="Carrinho">Adicionar</a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        }
+                  </div>
             </div>
 
       </div>
