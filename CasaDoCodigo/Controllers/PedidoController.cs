@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using System.Linq;
 using CasaDoCodigo.Models;
+using CasaDoCodigo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CasaDoCodigo.Controllers
 {
     public class PedidoController : Controller
     {
-        private List<Produto> _produtos = new List<Produto>
+        private readonly List<Produto> _produtos = new List<Produto>
         {
             new Produto {Id = 1, Nome = "Sleep not found", Preco = 59.90m},
             new Produto {Id = 2, Nome = "May the code be with you", Preco = 59.90m},
@@ -33,8 +33,10 @@ namespace CasaDoCodigo.Controllers
                 new ItemPedido(2, _produtos[1], 2),
                 new ItemPedido(3, _produtos[2], 3)
             };
+
+            var viewModel = new CarrinhoViewModel(itensCarrinho);
             
-            return View(itensCarrinho);
+            return View(viewModel);
         }
 
         public IActionResult Resumo()

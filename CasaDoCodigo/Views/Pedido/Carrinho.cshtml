@@ -3,7 +3,7 @@
 }
 
 @using System.Linq
-@model List<ItemPedido>
+@model CasaDoCodigo.ViewModels.CarrinhoViewModel
 
 <h3>Meu Carrinho</h3>
 
@@ -28,7 +28,7 @@
             </div>
       </div>
       <div class="panel-body">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Itens)
             {
                   <div class="row">
                         <div class="col-md-3">
@@ -48,11 +48,10 @@
       <div class="panel-footer">
             <div class="row">
                   <div class="col-md-10">
-                        Total: @Model.Count item
-                  </div>
+                        Total: @Model.Itens.Count @(Model.Itens.Count < 2 ? "Item" : "Itens")</div>
                   <div class="col-md-2">
                         <span class="pull-right">
-                              R$ @Model.Sum(i => i.Subtotal)
+                              Total: R$ @Model.Total
                         </span>
                   </div>
             </div>
